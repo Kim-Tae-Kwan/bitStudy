@@ -28,7 +28,16 @@ public class InterfaceTest {
 			}
 		};
 		
-		test.func();
+		class A implements Test{
+
+			@Override
+			public void func() {
+				System.out.println("익명 클래스");
+			}
+		}
+		
+		Test test2 = new A();
+		test2.func();
 		
 	}
 
