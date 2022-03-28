@@ -117,9 +117,11 @@ class GradesService{
 	// 성적 배열 full일 경우, 배열을 증가 시킴.
 	private void increaseArray() {
 		Grades[] newGradesArray = new Grades[nextIndex * 2];
-		for (int i = 0; i < gradesArray.length; i++) {
-			newGradesArray[i] = gradesArray[i];
-		}
+		
+		System.arraycopy(gradesArray, 0, newGradesArray, 0, gradesArray.length);
+//		for (int i = 0; i < gradesArray.length; i++) {
+//			newGradesArray[i] = gradesArray[i];
+//		}
 		
 		gradesArray = newGradesArray;
 		lastIndex = gradesArray.length - 1;
@@ -141,7 +143,7 @@ class GradesService{
 	}
 }
 
-public class Ex17 {
+public class GradesManager {
 
 	public static void main(String[] args) {
 		// 학생 성적 관리 프로그램(ver 0.3.0)
