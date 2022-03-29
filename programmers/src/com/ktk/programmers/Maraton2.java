@@ -15,25 +15,21 @@ public class Maraton2 {
 		String[] participant = { "mislav", "stanko", "mislav", "ana"};
 		String[] completion = { "stanko", "ana", "mislav" };
 		
-		
+		//정렬
 		Arrays.sort(participant);
 		Arrays.sort(completion);
 		
-		System.out.println(Arrays.toString(participant));
-		System.out.println(Arrays.toString(completion));
-		
+		//이름이 같지 않은 인덱스
 		int i;
 		for(i = 0; i < completion.length; i++) {
-//			if(!participant[i].equals(completion[i])) {
-//				break;
-//			}
-			
-			if(!completion[i].equals(participant[i])) {
+			if(!participant[i].equals(completion[i])) {
 				break;
 			}
 		}
 		
-		System.out.println(participant[i]);
+		String answer = participant[i];
+		
+		System.out.println(answer);
 		
 	}
 
