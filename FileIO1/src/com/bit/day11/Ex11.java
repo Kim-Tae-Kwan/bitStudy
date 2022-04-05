@@ -6,7 +6,7 @@ public class Ex11 {
 	//버퍼 이용하여 속도 개선
 	public static void main(String[] args) {
 		String msg = "";
-		for (int i = 0; i < 100000; i++) {
+		for (int i = 0; i < 10000; i++) {
 			msg += i;
 		}
 		
@@ -20,13 +20,13 @@ public class Ex11 {
 			fos = new FileOutputStream(file);
 			
 			before = System.currentTimeMillis();
-			for (int i = 0; i < buf.length; i++) {
-				fos.write(buf[i]);
-			}
-
+//			for (int i = 0; i < buf.length; i++) {
+//				fos.write(buf[i]);
+//			}
+			
+			fos.write(buf,0,buf.length); //버퍼(배열) 사용.
 			fos.close();
-//			fos.write(buf,0,buf.length); //버퍼(배열) 사용.
-//			fos.close();
+
 			after = System.currentTimeMillis();
 			System.out.println("작성 완료: " + (after - before) + "ms");
 		} catch (Exception e) {

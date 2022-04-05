@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Scanner;
 
+//Thread 제어.
+
 class Lec07 extends Thread{
 	FileOutputStream fos = null;
 	
@@ -27,7 +29,7 @@ class Lec07 extends Thread{
 	}
 }
 
-//Thread 제어.
+
 public class Ex07 {
 
 	public static void main(String[] args) {

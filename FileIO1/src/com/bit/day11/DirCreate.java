@@ -17,7 +17,8 @@ public class DirCreate {
 //			File before = new File(path1);
 //			before.mkdir();
 //		}
-		
+
+		//상위 폴더부터 생성하기.
 		String parent = file.getParent();
 		File before = file;
 		while(true) {

@@ -2,6 +2,7 @@ package com.bit.day12;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class Ex18 {
@@ -15,6 +16,7 @@ public class Ex18 {
 			osw = new OutputStreamWriter(fos);
 			
 			osw.write("문자열 잘 작성됩니다...");
+			
 			
 			
 			osw.close();
