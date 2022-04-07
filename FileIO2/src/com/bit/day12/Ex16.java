@@ -39,9 +39,6 @@ public class Ex16 {
 			e.printStackTrace();
 		}
 		
-		
-		
-		
 	}
 
 }

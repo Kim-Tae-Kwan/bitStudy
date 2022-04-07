@@ -8,7 +8,7 @@ public class ThreadSynch extends Thread{
 	int su2;
 	static int sum;
 	
-	public synchronized static void func02(int i) {
+	public static void func02(int i) {
 		int temp = sum + i;
 		sum = temp;
 		System.out.println(Thread.currentThread().getName());

@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 class Student{
-	public static int cnt;
+	public static int cnt = 0;
 	private final int num;
 	private String name;
 	private int basic, back, front;
