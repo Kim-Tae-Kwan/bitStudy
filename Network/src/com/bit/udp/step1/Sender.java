@@ -17,11 +17,11 @@ public class Sender {
 			dsock = new DatagramSocket();
 			
 			String msg = "hello UDP";
-			packet = new DatagramPacket(msg.getBytes(), msg.length(), addr, port);
+			packet = new DatagramPacket(msg.getBytes(), msg.getBytes().length, addr, port);
 			dsock.send(packet);
 			
 			msg = "잘받았나요";
-			packet = new DatagramPacket(msg.getBytes(), msg.length(), addr, port);
+			packet = new DatagramPacket(msg.getBytes(), msg.getBytes().length, addr, port);
 			dsock.send(packet);
 			
 		} catch (Exception e) {
