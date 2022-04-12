@@ -18,13 +18,13 @@ public class Ex02 {
 		info.setProperty("user", "user01");
 		info.setProperty("password", "1234");
 		
-		Driver driver = null;
+//		Driver driver = null;
 		Connection conn = null; // 데이터베이스 연결.
 		Statement stmt = null; // 쿼리 날리기 위한 인터페이스.
 		ResultSet rs = null; // select 결과 셋.
 		
 		try {
-			driver = new Driver();
+//			driver = new Driver();
 			conn = DriverManager.getConnection(url, info);
 			
 			stmt = conn.createStatement();
