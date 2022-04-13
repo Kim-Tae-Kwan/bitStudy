@@ -10,7 +10,7 @@ import java.util.Properties;
 
 import com.mysql.cj.jdbc.Driver;
 
-public class Ex02 {
+public class Select {
 	public static void main(String[] args) {
 		String sql = "select num, sub, name, content from bbs01";
 		String url = "jdbc:mysql://localhost:3306/test01";

@@ -10,7 +10,7 @@ import java.util.Properties;
 
 import com.mysql.cj.jdbc.*;
 
-public class Ex01 {
+public class Crud {
 
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://localhost:3306/test01";

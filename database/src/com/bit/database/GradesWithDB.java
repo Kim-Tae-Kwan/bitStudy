@@ -1,4 +1,4 @@
-package com.bit.db;
+package com.bit.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 import com.mysql.cj.jdbc.Driver;
 
-public class Ex02 {
+public class GradesWithDB {
 	static Logger log = Logger.getGlobal();
 
 	static Connection getConnection() {
@@ -123,13 +123,7 @@ public class Ex02 {
 					}
 				}
 				
-				
-				
-				
-				
 			}
-
 		}
-
 	}
 }

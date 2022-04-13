@@ -6,7 +6,7 @@ class Lec03{
 	int su = 1234;
 }
 
-public class Ex03 {
+public class Reflect {
 
 	public static void main(String[] args) {
 //		Lec03 obj = new Lec03();

@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 import com.mysql.cj.jdbc.Driver;
 
-public class Ex01 {
+public class log {
 
 	public static void main(String[] args) {
 		Logger log = Logger.getGlobal();
