@@ -1,0 +1,17 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/centos8"
+  config.vm.network "forwarded_port", guest: 3306, host: 33066
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  config.vm.provision "shell", inline: <<-SHELL
+	dnf install -y mysql-server.x86_64	
+	firewall-cmd --add-port=3306/tcp --permanent
+	firewall-cmd --reload
+	systemctl start mysqld
+	touch root.sql
+	echo "create user 'root'@'%' identified by '1234';" > root.sql
+	echo "grant all privileges on *.* to 'root'@'%' with grant option;" >> root.sql
+	echo "flush privileges;" >> root.sql
+	mysql -u root < root.sql
+  SHELL
+end

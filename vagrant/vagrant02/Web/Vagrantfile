@@ -1,0 +1,47 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/centos8"
+  config.vm.network "forwarded_port", guest: 8080, host: 18080
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  config.vm.provision "shell", inline: <<-SHELL
+	dnf install -y java-1.8.0-openjdk-devel.x86_64
+	echo 'JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-2.el8_5.x86_64' >> /etc/profile
+	echo 'PATH=$JAVA_HOME:$PATH' >> /etc/profile
+	wget https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.109/bin/apache-tomcat-7.0.109.tar.gz
+	tar -zxvf apache-tomcat-7.0.109.tar.gz
+	wget -P apache-tomcat-7.0.109/lib https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.28/mysql-connector-java-8.0.28.jar
+	firewall-cmd --add-port=8080/tcp --permanent
+	firewall-cmd --reload
+	./apache-tomcat-7.0.109/bin/startup.sh
+	mkdir apache-tomcat-7.0.109/webapps/test
+	echo '<h1>connection: <%
+		String driver="com.mysql.cj.jdbc.Driver";
+		String url="jdbc:mysql://192.168.128.143:33066/mysql";
+		String user="root";
+		String password="1234";
+		Class.forName(driver);
+		java.sql.Connection conn=null;
+		conn=java.sql.DriverManager.getConnection(url,user,password);
+		out.print(conn!=null);
+		if(conn!=null)conn.close();
+	%> </h1>' > apache-tomcat-7.0.109/webapps/test/index.jsp
+
+
+  SHELL
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
