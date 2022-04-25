@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            /* 
+                우선순위
+                inline > id > class > tag
+            */
+
+            /* 
+                태그 선택자
+                태그명{} 
+            */
+            h1{
+                color: red;
+            }
+            h2{
+                color: blue;
+            }
+            a{
+                color: green;
+            }
+
+            /* 
+                아이디 선택자
+                #아이디명{} 
+            */
+            #id02{
+                color: gray;
+            }
+
+            /* 
+                클래스 선택자
+                .클래스명{} 
+            */
+            .cl03{
+                color: aquamarine;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>css 선택자</h1>
+        <p class="cl03">내용</p>
+
+        <h2>태그<a href="#">선택자</a>1</h2>
+        <p>내용</p>
+
+        <h2 id="id02">아이디선택자2</h2>
+        <p>#아이디명</p>
+        <p>특정아이디는 한문서에서 유일, 중복 불가능</p>
+
+        <h2 class="cl03">클래스선택자3</h2>
+        <p>.클래스명</p>
+        <p>한문서에서 여러번 부여가능</p>
+        <p>엘리먼트의 종류가 서로 달라도 부여가능</p>
+
+        <h2 class="cl03">클래스선택자4</h2>
+        <p>내용</p>
+
+        <ul>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+        </ul>
+    </body>
+</html>
