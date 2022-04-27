@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            h1{
+                text-align: center; /* 가운데 정렬 */
+            }
+            h1+p{
+                text-align: right; /* 오른쪽 정렬 */
+            }
+            h1+p+h2{
+                text-align: left; /* 왼쪽 정렬 */
+            }
+            h1+p+h2+p{
+                text-align: justify; /*  */
+            }
+            h1+p+h2+p+h2{
+                text-indent: 20px; /* 들여쓰기 */
+            }
+            h1+p+h2+p+h2+p{
+                text-decoration: underline; /* 밑줄 */
+            }
+            h1+p+h2+p+h2+p+a{
+                text-decoration: none; /* <a> underline 제거 */
+            }
+            h1+p+h2+p+h2+p+a+h2{
+                text-decoration: line-through;
+            }
+            h1+p+h2+p+h2+p+a+h2+p{
+                text-decoration: overline;
+            }
+            h2{
+                margin-bottom: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>텍스트</h1>
+        <p>텍스트 정렬</p>
+        <h2>제목</h2>
+        <p>내용</p>
+        <h2>제목</h2>
+        <p>내용</p>
+        <a href="#">link</a>
+        <h2>제목</h2>
+        <p>내용</p>
+    </body>
+</html>
