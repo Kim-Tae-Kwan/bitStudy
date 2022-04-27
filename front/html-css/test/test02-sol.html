@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/mygrid.css">
+    <style rel="stylesheet" type="text/css">
+        header{
+            overflow: hidden;
+        }
+        header>h1{
+            float: left;
+        }
+        header>form{
+            float: right;
+        }
+        header>form>*{
+            text-align: right;
+            margin: 0px;
+        }
+        header>form>p{
+            font-size: 0.8em;
+            font-style: italic;
+        }
+        nav{
+            height: 40px;
+            background-color: darkgray;
+        }
+        nav>ul{
+            list-style: none;
+            padding: 0px;
+            width: 360px;
+            margin: 0px auto;
+            overflow: hidden;
+        }
+        nav>ul>li{
+            width: 100px;
+            float: left;
+            margin: 0px 10px;
+            height: 40px;
+        }
+        nav>ul>li:hover{
+            height: 175px;
+        }
+        nav>ul>li>a{
+            display: block;
+            height: 40px;
+            background-color: gray;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav>ul>li>ol{
+            list-style: none;
+            padding: 0px;
+        }
+        nav>ul>li>ol>li>a{
+            position: relative;
+            display: block;
+            height: 40px;
+            border-top: 5px solid white;
+            background-color: gray;
+            text-align: center;
+            text-decoration: none;
+            line-height: 40px;
+            color: white;
+            font-weight: bold;
+        }
+
+        footer{
+            text-align: center;
+            margin-top: 100px;
+            background-color: darkgray;
+            padding: 50px 0px;
+        }
+        #loopImg{
+            width: 600px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+        #loopImg>ul{
+            list-style: none;
+            padding: 0px;
+            width: 4200px;
+            animation-name: looping;
+            animation-duration: 36s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        #loopImg>ul>li{
+            float: left;
+        }
+        @keyframes looping {
+            from {margin-left: 0px;}
+            to {margin-left: -3600px;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>비트교육센터</h1>
+            <form action="">
+                id<input type="text">
+                pw<input type="password">
+                <button>login</button>
+                <p>처음 오시는 분은 <a href="#">이곳</a>으로 먼저 가입 바랍니다.</p>
+            </form>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">MENU1</a>
+                    <ol>
+                        <li><a href="#">MENU1-1</a></li>
+                        <li><a href="#">MENU1-2</a></li>
+                        <li><a href="#">MENU1-3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">MENU2</a>
+                    <ol>
+                        <li><a href="#">MENU2-1</a></li>
+                        <li><a href="#">MENU2-2</a></li>
+                        <li><a href="#">MENU2-3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">MENU3</a>
+                    <ol>
+                        <li><a href="#">MENU3-1</a></li>
+                        <li><a href="#">MENU3-2</a></li>
+                        <li><a href="#">MENU3-3</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <h2>법률</h2>
+            <p>살았으며, 거친 위하여, 우리 노년에게서 아름답고 무엇을 우리 끝에 있으랴? 있는 이상 꽃 산야에 봄바람이다. 찬미를 가지에 열락의 천고에 얼마나 무한한 모래뿐일 약동하다. 곧 곳으로 스며들어 영락과 생생하며, 무한한 전인 낙원을 것이다. 얼마나 같으며, 간에 뛰노는 영락과 되려니와, 보라. 같은 구하지 청춘의 대고, 없으면, 것이다. 없으면, 그것은 수 고동을 따뜻한 피에 아름다우냐? 아니더면, 안고, 보내는 그러므로 무한한 넣는 부패뿐이다. 어디 있음으로써 위하여 얼마나 남는 사라지지 이것을 말이다.</p>
+            <p>있는 이것을 인간에 그들의 인생을 가는 위하여, 얼마나 아름다우냐? 생생하며, 풍부하게 스며들어 이것은 방황하여도, 실현에 얼음에 지혜는 같이, 것이다. 이 이것이야말로 고동을 뜨거운지라, 않는 노래하며 그들은 구하기 것이다. 타오르고 거선의 착목한는 석가는 동력은 그들을 것이다. 관현악이며, 청춘의 오아이스도 황금시대를 청춘을 찾아 있으랴? 청춘이 과실이 있는 이것은 방황하여도, 힘있다. 두손을 뛰노는 얼음 가치를 인도하겠다는 그들은 되는 아름다우냐? 용감하고 우는 사는가 길지 타오르고 말이다. 사람은 위하여 귀는 쓸쓸한 철환하였는가? 유소년에게서 청춘의 불어 가는 위하여서.</p>
+            <p>인간은 못하다 같이, 더운지라 그러므로 가슴에 현저하게 과실이 운다. 위하여, 든 싸인 실현에 따뜻한 노래하며 무한한 이상 긴지라 이것이다. 피어나기 품에 목숨을 대고, 군영과 피다. 생명을 모래뿐일 거친 주며, 만천하의 싹이 바이며, 사랑의 못하다 때문이다. 사는가 생명을 인도하겠다는 것이다. 이상, 피어나는 과실이 충분히 사막이다. 같이, 속에서 인간에 않는 못할 이는 이상이 것이다. 튼튼하며, 그러므로 고행을 황금시대다. 이성은 봄날의 보이는 있는가?</p>
+            <div id="loopImg">
+                <ul>
+                    <li><img src="https://dummyimage.com/600x200/000/fff&text=image1"/></li>
+                    <li><img src="https://dummyimage.com/600x200/000/fff&text=image2"/></li>
+                    <li><img src="https://dummyimage.com/600x200/000/fff&text=image3"/></li>
+                    <li><img src="https://dummyimage.com/600x200/000/fff&text=image4"/></li>
+                    <li><img src="https://dummyimage.com/600x200/000/fff&text=image5"/></li>
+                    <li><img src="https://dummyimage.com/600x200/000/fff&text=image6"/></li>
+                    <li><img src="https://dummyimage.com/600x200/000/fff&text=image1"/></li>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <address>서울특별시 서초구 서초대로74번길33 비트빌 3층</address>
+                Copyright by bitacademy co.ltd. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
