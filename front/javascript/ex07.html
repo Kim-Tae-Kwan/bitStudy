@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        // function 함수이름(매개변수){실행문;}
+        function func01(){
+            console.log('func01 run');
+            return;
+        }
+        function func02(){
+            console.log('func02 run');
+            return 1234;
+        }
+        function func03(a){
+            console.log('param:' + a);
+        }
+        function func04(a,b){
+            console.log('param1:' + a + 'param2:' + b);
+        }
+        function func03(){
+            console.log('오버로드는 안댐, 단 덮어씀');
+        }
+
+
+        var a = func01();
+        var b = func02();
+        console.log(a);
+        console.log(b);
+        func03();
+        func04(1);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

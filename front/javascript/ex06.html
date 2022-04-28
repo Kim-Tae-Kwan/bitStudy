@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        // var a = '-1';
+        //var a = -1; // number 0이면 false
+        //var a = '';  // number length==0 false
+        // var a = new Date(); // null 이면 false
+        var a;
+        if(a){
+            console.log("참");    
+        }else{
+            console.log("거짓");    
+        }
+        console.log("=========================");
+        
+        /*
+            switch 문
+            1. === 연산자 사용.
+            2. case에 연산 가능.
+        */ 
+        var b = 0;
+        switch(b){ 
+            case '1' : console.log("1입니다."); break;
+            case a === 0 : console.log("0입니다."); break;
+            case -1 : console.log("-1입니다."); break;
+            default: console.log("몰라"); break;
+        }
+        console.log("=========================");
+
+        //삼항연산자
+        b===0?console.log("참"):console.log("거짓");
+
+        console.log("=========================");
+        for(var i=0;i<5;i++){
+            console.log("i="+i);
+        }
+        console.log(i);
+        console.log("=========================");
+
+        var i=0;
+        while(i<5){
+            console.log('while i=' + i);
+            i++;
+        }
+
+        console.log("=========================");
+        do{
+            console.log('do while i=' + i);
+        }while(i<5);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

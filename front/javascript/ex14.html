@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var func02 = function(){
+            console.log('func01 run...');
+        };
+
+        // console.log(window.func02);
+        // func02();
+
+
+        function func03(a){
+            //callback 함수.
+            a();
+        }
+
+        // func03(func02);
+
+        function func04(){
+            //클로져 - 변수의 라이프사이클을 뛰어넘음.
+            return function(){
+                console.log('지역변수에서 선언된 함수');
+            };
+        }
+
+        var after = func04();
+        after();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

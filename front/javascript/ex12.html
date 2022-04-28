@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        //Object
+
+        var obj1 = {'key1':'val1','key2':'val2'};
+        console.log(typeof obj1, obj1);
+        console.log(obj1['key1'],obj1['key2']);
+        console.log('-----------------------------');
+
+        var obj2 = {'key1':1111, 2222:'val2', true:3333, 3.14:false};
+        console.log(obj2);
+        console.log('-----------------------------');
+
+        var a = 'aaa';
+        var obj3 = {key1:'val1', key2:a, a:'val3'};
+        obj3[a] = 'edit3';
+        console.log(obj3);
+        console.log('-----------------------------');
+
+        var obj4 = new Object();
+        obj4['key1'] = 'val1';
+        obj4['key1'] = 'edit1';
+        console.log(typeof obj4, obj4.key1);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
