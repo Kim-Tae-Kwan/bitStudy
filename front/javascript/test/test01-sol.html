@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        div{
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+        ul{
+            list-style: none;
+            padding: 0px;
+            width: 3600px;
+        }
+        /* ul>li{
+            float: left;
+        } */
+    </style>
+</head>
+<body>  
+    <div>
+        <ul></ul>
+    </div>
+    <button onclick="prev();">PREV</button>
+    <button onclick="next();">NEXT</button>
+    <script>
+        var div = document.firstElementChild.lastElementChild.firstElementChild;
+        var ul = div.firstElementChild;
+        for(var i = 1; i < 7; i++){
+            var li =  document.createElement('li'); 
+        var img = document.createElement('img'); 
+        img.src = 'https://dummyimage.com/600x400/000/fff&text=image0' + i;
+        li.appendChild(img);
+        ul.appendChild(li);
+        }
+
+        var button = document.createElement('button');
+        
+
+        setInterval(function(){
+            ul.appendChild(ul.firstElementChild)
+        },3000)
+
+        function next(){
+            ul.appendChild(ul.firstElementChild)
+        }
+        
+        function prev(){
+            ul.prepend(ul.lastElementChild)
+        }
+    </script>
+</body>
+</html>

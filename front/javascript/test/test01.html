@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    
+</head>
+<body>
+    <div>
+        <ul></ul>
+    </div>
+    <button onclick="func01();">next</button>
+    <script>
+        var images = [];
+        for(var i = 1; i < 7; i++){
+            var img = document.createElement('img');
+            img.src = 'https://dummyimage.com/600x400/000/fff&text=image' + i;
+            images.push(img);
+        }
+
+        var di = document.firstElementChild.lastElementChild.firstElementChild;
+        var ul = di.firstElementChild;
+        for(var i = 0; i < images.length; i++){
+            ul.appendChild(images[i]);
+        }
+        function func01(){
+            ul.append(ul.firstElementChild)
+        }
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // 내장 함수
+        var a = '1111';
+        window.console.log(window.parseInt(a));
+        window.console.log('로그메세지');
+        window.console.error('에러메세지');
+        
+        // var result = window.alert('창 띄우기');
+        // window.console.log('alter after', result);
+        
+        // var result = window.confirm('삭제하시겠습니까?')
+        // window.console.log('confirm after', result);
+
+        // var result = window.prompt('입력','기본값');
+        // window.console.log('prompt after', result);
+
+        var num = 0;
+        function callback(){
+            num++;
+            console.log('num: ' + num);
+            if(num === 5){
+                window.clearInterval(inter1);
+            }
+        };
+        function callback2(){
+            num++;
+            console.log('num: ' + num);
+            window.setTimeout(callback2, 1000);
+        };
+
+        // 시간 간격으로 반복.
+        // window.setInterval(callback, 1000);
+
+        // 시간 이후 한번 실행.
+        // setTimeout 으로 setInterval 구현.
+        // window.setTimeout(callback2, 1000);
+
+        // js 싱글 스레드로 인해  setTimeout() 비동기.
+        console.log('before');
+        window.setTimeout(callback, 1000);
+        console.log('after');
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

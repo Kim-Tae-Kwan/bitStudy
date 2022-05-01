@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a = 1234;
+        var b = new Number(1234);
+        var c = new Number(1234);
+        console.log(a == b, a === b);
+        console.log(c == b, c === b);
+        console.log("===========================");
+
+        var d = "abc";
+        var e = 'abc';
+        var f = `abc`;
+        var g = new String();
+        console.log(d,e,f,g);
+        var h = new String('abc');
+        var k = new String('abc');
+        console.log(d==e, d===e);
+        console.log(d==h, d===h);
+        console.log(h==k, h===k);
+        console.log("4"+2, "4"-2);
+        console.log(parseInt("1,000원")+1,parseFloat("1,000원")-1);
+        console.log("1,000원"+1,"1,000원"-1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

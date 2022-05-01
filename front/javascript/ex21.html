@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // 함수 선언시 매개변수 없을때 값 전달.
+        // -> arguments
+
+        function func01(){
+            var arr = arguments;
+            console.log(arr.length);
+        };
+        func01(1,2);
+        console.log("======================================");
+
+        var key1 = 'no';
+        var obj1 = {
+            key1 : 'val1',
+            func : function(a,b,c){
+                console.log(key1, this.key1, a,b,c);
+            }
+        };
+        var obj2 = {
+            key1 : 'edit1'
+        };
+        obj1.func.call(obj2,'나도', '너도');
+        console.log("======================================");
+
+        var obj3 = {
+            func : function(a,b,c){
+                console.log(key1, this.key1, a, b);
+            }
+        };
+        var obj4 = {
+            key1 : 'edit1'
+        };
+        obj3.func.apply(obj4,['add1','add2'])
+        console.log("======================================");
+    </script>
+</head>
+<body>
+</body>
+</html>

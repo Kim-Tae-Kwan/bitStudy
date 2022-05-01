@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var win;
+        function newWindow(){
+            win=window.open('https://m.naver.com','ex25','width=400,height=400,top=2000,left=100');
+        };
+        function newClose(){
+            win.close();
+        }
+        function newMove(){
+            win.moveBy(300,300);
+        }
+    </script>
+</head>
+<body>
+    <h1>부모창</h1>
+    <button onclick="newWindow();">새창</button>
+    <button onclick="newClose();">새창 닫기</button>
+    <button onclick="newMove();">이동</button>
+</body>
+</html>
