@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style rel="stylesheet" type="text/css">
+            div{
+                background-image: url(resource/car.jpg);
+                width: 200px;
+                height: 148px;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+        </style>
+        <script type="text/javascript">
+            onload = function(){
+                var target = document.querySelector('#target');
+                target.style.left = '0px';
+                target.style.top = '0px';
+                window.onclick = function(e){
+                    console.log(e.clientX, e.clientY);
+                    target.style.left = parseInt(e.clientX) -100 +'px';
+                    target.style.top = parseInt(e.clientY)-74 +'px';
+                }
+                window.onkeydown = function(e){
+                    console.log(e.keyCode);
+                    if(e.keyCode == 39){
+                        target.style.left = parseInt(target.style.left)+10+'px';
+                    }else if(e.keyCode == 37){
+                        target.style.left = parseInt(target.style.left)-10+'px';
+                    }else if(e.keyCode == 38){
+                        target.style.top = parseInt(target.style.top)-10+'px';
+                    }else if(e.keyCode == 40){
+                        target.style.top = parseInt(target.style.top)+10+'px';
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="target"></div>
+    </body>
+</html>

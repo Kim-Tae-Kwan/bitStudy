@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script type="text/javascript">
+            
+            window.onload=function(){
+                // 페이지 로드 시점.
+                var h1 = document.querySelector("h1");
+                h1.innerText = "수정";
+            };
+            
+            window.onbeforeunload = function(){
+                //페이지 변경 시점.
+                //resource 정리 함 ex) connection 해제.
+                console.log("beforeunload");
+            }
+
+            window.onerror = function(){
+                // 페이지 데이터 로딩중 에러발생시...
+            }
+
+            window.onresize = function(){
+                // console.log("창 사이즈 변경", window.screenX, window.screenY);
+                console.log(scrollX, scrollY);
+            }
+
+            
+
+        </script>
+    </head>
+    <body>
+       <h1>DOM - Level2 event</h1> 
+       <button>버튼</button>
+    </body>
+</html>

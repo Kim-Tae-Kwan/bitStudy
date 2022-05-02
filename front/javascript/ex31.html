@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>element selecting</h1>
+        <p>선택자</p>
+        <h2 id="id1">제목</h2>
+        <p class="cl1">내용</p>
+        <h2 class="cl2">제목</h2>
+        <p class="cl1 cl2">내용</p>
+        <h2 class="cl3">제목</h2>
+        <p class="cl2">내용</p>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+        </ul>
+
+        <script>
+            // document.getElementById()
+            // -> 객체 반환, 없으면 null
+
+            // document.getElementsByClassName()
+            // -> 배열 반환, 없으면 length 0 배열 반환
+
+            var id1 = document.getElementById('id1');
+            var cl1 = document.getElementsByClassName('cl1');
+            var lis = document.getElementsByTagName('li');
+            console.log(lis.length);
+
+            for(ele of cl1){
+                ele.style.color='green';
+            }
+                
+        </script>
+        
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style rel="stylesheet" type="text/css">
+            ul{
+                background-color: aqua;
+            }
+            ol{
+                background-color: chartreuse;
+            }
+        </style>    
+    </head>
+    <body>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+        <ol></ol>
+        <script type="text/javascript">
+            var ul = document.querySelector('ul');
+            var ol = document.querySelector('ol');
+
+            //ol.innerHTML = ul.innerHTML;
+            ul.querySelectorAll('li').forEach(function(ele){
+                var obj = ele.cloneNode();
+                obj.appendChild(ele.childNodes[0].cloneNode());
+                ol.appendChild(obj);
+            });
+
+        </script>
+    </body>
+</html>

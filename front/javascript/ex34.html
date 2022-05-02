@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style rel="stylesheet" type="text/css">
+            div{
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+       <h1>use Text</h1> 
+       <div id="target">
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+       </div>
+       <script>
+           console.log(document.querySelector('h1').innerText);
+        //    document.querySelector('h1').innerText='h1태그 <a href="#">문자열</a> 수정';
+           document.querySelector('h1').innerHTML='h1태그 <a href="#">문자열</a> 수정';
+           var target = document.querySelector('#target>ul')
+           console.log(target.innerText);
+           console.log(target.innerHTML);
+           console.log(target.outerText);
+           console.log(target.outerHTML);
+        //    target.outerHTML="<ol><li>item1</li><li>item2</li></ol>"
+        //    target.innerHTML = target.innerHTML + '<li>item5</li>';
+            target.outerHTML = '<a href="#">add</a>' + target.outerHTML;
+       </script>
+       
+    </body>
+</html>

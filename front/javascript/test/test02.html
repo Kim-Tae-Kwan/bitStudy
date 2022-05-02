@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            div{
+                width: 600px;
+                height: 400px;
+                overflow: hidden;
+                margin: 0px auto;
+            }
+            ul{
+                width: 3600px;
+                list-style-type: none;
+                margin: 0px auto;
+            }
+            ul>li{
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <!-- <li><img src="https://dummyimage.com/600x400/000/fff&text=image1" alt=""></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=image2" alt=""></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=image3" alt=""></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=image4" alt=""></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=image5" alt=""></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=image6" alt=""></li> -->
+            </ul>
+        </div>
+        <script>
+            var ul = document.querySelector('ul');
+            var arr = ['image1','image2','image3','image4','image5','image6'];
+            for(var ele of arr){
+                var li = document.createElement('li');
+                var img = document.createElement('img');
+                img.src="https://dummyimage.com/600x400/000/fff&text=" + ele;
+                li.appendChild(img);
+                ul.appendChild(li);
+            }
+
+            setInterval(function(){
+                ul.appendChild(ul.querySelectorAll('li')[0]);
+            }, 1000);
+        </script>
+    </body>
+</html>

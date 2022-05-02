@@ -1,0 +1,52 @@
+<!DOCTYPE heml>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>DOM 제어</h1>
+        <div id="target"></div>
+
+        <script type="text/javascript">
+            function newEle(tagName, txt){
+                ele = document.createElement(tagName);
+                ele.appendChild(document.createTextNode(txt));
+                return ele;
+            };
+
+            
+
+            // h1 텍스트 수정.
+            var h1 = document.firstElementChild.lastElementChild.firstElementChild;
+            var ordTxt = h1.childNodes[0]; // -> textNode
+            var newTxt = document.createTextNode('수정된 글자');
+            h1.removeChild(ordTxt);
+            h1.appendChild(newTxt);
+
+            // target에 ul 추가.
+            // var target = h1.nextElementSibling;
+            var target = document.getElementById('target'); // id로 element 잡기.
+            var ul = document.createElement('ul');
+            
+            // function appenLi(ul, txt){
+            //     ul.appendChild(newEle('li', txt));    
+            // };
+            // appenLi(ul, 'add1');
+            // appenLi(ul, 'add2');
+            // appenLi(ul, 'add2');
+
+            ul.appenLi = function (txt){
+                this.appendChild(newEle('li', txt));    
+                return this;
+            }
+            ul
+                .appenLi('add1')
+                .appenLi('add2')
+                .appenLi('add3')
+                .appenLi('add4');
+            
+            target.appendChild(ul);
+            
+        </script>
+    </body>
+</html>
