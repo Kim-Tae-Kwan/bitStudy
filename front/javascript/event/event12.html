@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        @keyframes ani1 {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        var img;
+        var timeout;
+        var cnt = 0;
+        var div;
+        var next;
+        var arr = [
+                'https://dummyimage.com/600x400/000/fff&text=img01',
+                'https://dummyimage.com/600x400/000/fff&text=img02',
+                'https://dummyimage.com/600x400/000/fff&text=img03',
+                'https://dummyimage.com/600x400/000/fff&text=img04',
+                'https://dummyimage.com/600x400/000/fff&text=img05',
+                'https://dummyimage.com/600x400/000/fff&text=img06'
+
+            ];
+        window.onload = function(){
+            div = document.querySelector('div');
+            div.outerHTML='<div></div></div><a href="#">prev</a><a href="#">next</a>';
+            div = document.querySelector('div');
+            div.innerHTML = '<img src="'+ arr[cnt] +'"/>'
+
+            var prev = document.querySelectorAll('a')[0];
+            next = document.querySelectorAll('a')[1];
+            // prev.onclick = prevImage;
+            // next.onclick = nextImage;
+            prev.addEventListener('click', prevImage);
+            next.addEventListener('click', nextImage);
+
+            img = document.querySelector('div>img');
+            timeout = setTimeout(loop, 3000);
+        };
+        function loop(){
+            next.click();
+        }
+
+        function prevImage(e){
+            e.preventDefault(); // 기본기능 취소(level 2~3)
+            cnt--;
+            if(cnt < 0) cnt = arr.length - 1;
+            img.src = arr[cnt];
+            clearTimeout(timeout);
+            timeout = setTimeout(loop, 3000);
+            // return false; // 기본기능 취소(level 2)
+        };
+        function nextImage(e){
+            e.preventDefault();
+            cnt++;
+            if(cnt == arr.length) cnt = 0;
+            div.innerHTML = '<img src="'+ arr[cnt] +'"/>'
+            img = document.querySelector('div>img');
+            img.style.animationDuration = '2s';
+            img.style.animationName = 'ani1';
+            // img.src = arr[cnt];
+            clearTimeout(timeout);
+            timeout = setTimeout(loop, 2000);
+            // return false;
+        };
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

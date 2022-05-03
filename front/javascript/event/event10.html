@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        h1{
+            color: red;
+        }
+    </style>
+    <script>
+        /*
+            onload는 Level2 적용!!
+            다중으로 사용시 충돌 가능성 발생.
+        */
+        window.onload = function(){
+            var h1 = document.querySelector('h1');
+            console.log('level2의 로딩');
+            var btn = document.querySelector('button');
+            btn.onclick = function(){console.log('level2');};
+            btn.addEventListener('click', function(){console.log('level3')});
+            console.log(btn.onclick);
+            
+        };
+        // window.onload = function(){
+        //     console.log('level2의 로딩2');
+        // };
+
+        // window.addEventListener('load', function(){
+        //     console.log('level3의 로딩');
+        // });
+        // window.addEventListener('load', function(){
+        //     console.log('level3의 로딩2');
+        // });
+
+        // css 제어.
+        document.styleSheets[0].rules[0].style
+
+        function funt01(){}
+    </script>
+</head>
+<body>
+    <h1>이벤트 선택</h1>
+    <button onclick="func01();">button</button>
+</body>
+</html>
