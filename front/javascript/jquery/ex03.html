@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes ani1 {
+            from{margin-left: 0px;}
+            to{margin-left: -3600px}
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        window.onload = function(){
+            $('ul')
+                .css('list-style','none')
+                .css('width','4200px')
+                .css('animation-duration','10s')
+                .css('animation-name','ani1')
+                .css('animation-timing-function','linear')
+                .css('animation-iteration-count','infinite')
+                ;
+            $('li')
+                .css('float','left')
+                ;
+            $('div')
+                .css('margin','0px')
+                .css('width','600px')
+                .css('height','400px')
+                .css('overflow','hidden');
+        };
+        
+    </script>
+</head>
+<body>
+    <h1>test</h1>
+    <div>
+        <ul>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img01"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img02"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img03"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img04"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img05"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img06"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img01"></li>
+        </ul>
+    </div>
+</body>
+</html>

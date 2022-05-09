@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        span{
+            background-color: aqua;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            // $('span').attr('style','color: red');
+            // console.log($('span').attr('style'));
+            // console.log($('span').css('background-color'));
+            // $('a').attr('href','https://google.com')
+            // console.log($('a').attr('href'))
+            // $('span').attr('onclick','(function(){location.href="https://google.com"})()')
+            // console.log($('form').attr('method'));
+            // $('input').attr('type','password');
+            // $('button').attr('type','reset');
+            // $('button').removeAttr('type');
+            // $('a').removeAttr('href');
+
+            console.log($('input').eq(0).prop('readonly'))
+            console.log($('input').eq(1).prop('checked'))
+            console.log($('input').eq(2).prop('checked'))
+            console.log($('input').eq(3).prop('checked'))
+            console.log($('option').eq(0).prop('selected'))
+            console.log($('option').eq(1).prop('selected'))
+            console.log($('option').eq(2).prop('selected'))
+            console.log($('option').eq(3).prop('selected'))
+            $('input').eq(0).removeProp('readonly')
+            $('input').eq(1).prop('checked',true);
+            $('option').eq(3).prop('selected', true);
+            
+            $('input').eq(0).val('asdfqwer');
+
+            $('textarea').val();
+            
+        };
+    </script>
+</head>
+<body>
+    <p>다음으로 이동<a href="#">link</a></p>
+    <form action="ex12.html" method="get">
+        <div><input type="text" readonly="readonly"></div>
+        <div>
+            <input type="checkbox">item1
+            <input type="checkbox" checked="checked">item2
+            <input type="checkbox">item3
+        </div>
+        <div>
+            <select name="" id="">
+                <option value="1">item1</option>
+                <option value="2" selected="selected">item2</option>
+                <option value="3">item3</option>
+                <option value="4">item4</option>
+            </select>
+        </div>
+        <div><button>이동</button></div>
+        <div><textarea>aaa</textarea></div>
+    </form>
+    <span>이동</span>
+</body>
+</html>

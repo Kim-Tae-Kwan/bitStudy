@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var cnt = 0;
+            var callback = function(){
+                $('li').css('display','none').html(function(idx,old){
+                if(idx == cnt) $('#target').html(old);
+               })
+               cnt++
+               if(cnt == 6) cnt=0;
+               setTimeout(callback, 1000);
+            };
+            $(callback);
+            
+        };
+    </script>
+</head>
+<body>
+    <div id="target"></div>
+    <div id="target">
+        <ul>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img01" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img02" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img03" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img04" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img05" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img06" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

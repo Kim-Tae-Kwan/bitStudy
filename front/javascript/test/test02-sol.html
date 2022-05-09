@@ -32,13 +32,13 @@
         }
         
 
-        // function loopImg(){
-        //     var img = arr.shift();
-        //     ul.innerHTML='<li><img src="'+ img +'"/></li>';
-        //     arr.push(img);
-        //     setTimeout(loopImg,1000);
-        // }
-        // loopImg();
+        function loopImg(){
+            var img = arr.shift();
+            ul.innerHTML='<li><img src="'+ img +'"/></li>';
+            arr.push(img);
+            setTimeout(loopImg,1000);
+        }
+        loopImg();
         
         
     </script>

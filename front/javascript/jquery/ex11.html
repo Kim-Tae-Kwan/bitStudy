@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 화면상에서 제외.
+            ele1 = $('h2').remove();
+
+            // 데이터 삭제.
+            ele2 = $('h3').detach();
+
+            // childNode들 삭제.
+            // $('h1').empty();
+
+            // $('span').unwrap('h4');
+            // $('span').wrap('h1');
+            // $('span').wrapAll('h1');
+            // $('span').wrapInner('<a href="#"></a>');
+            
+            // $('<div>edit</div>').replaceAll('h4');
+
+            $('h1').clone().html('edit').insertBefore('h1')
+            
+
+        };
+        
+    </script>
+</head>
+<body>
+    <h1>remove & detach</h1>
+    <h2>remove</h2>
+    <h2>detach</h2>
+    <h4><span>부모요소입니다.</span></h4>
+    <h4><span>부모요소입니다.</span></h4>
+    <h4><span>부모요소입니다.</span></h4>
+    
+</body>
+</html>
