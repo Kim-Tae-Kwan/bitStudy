@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        div{
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+        ul{
+            width: 4200px;
+            height: 400px;
+            list-style: none;
+            padding: 0px;
+        }
+        li{
+            float: left;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        var callback;
+        $(function(){
+            callback = function(){
+                $('ul').css('margin-left','0px')
+                    .animate({marginLeft : '-3600px'}, 36000, 'linear')
+                    .delay(1000)
+                    .animate({marginLeft : '-=600'}, 1000)
+                    .delay(1000)
+                    .animate({marginLeft : '-=600'}, 1000)
+                    .delay(1000)
+                    .animate({marginLeft : '-=600'}, 1000)
+                    .delay(1000)
+                    .animate({marginLeft : '-=600'}, 1000)
+                    .delay(1000)
+                    .animate({marginLeft : '-=600'}, 1000, function(){
+                        setTimeout(callback,1000);
+                    })
+            };
+            $(callback);
+        })
+    </script>
+</head>
+<body>
+    <div id="target">
+        <ul>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img1" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img2" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img3" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img4" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img5" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img6" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img1" alt=""></li>
+        </ul>
+    </div>
+
+</body>
+</html>

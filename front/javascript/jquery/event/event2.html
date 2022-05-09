@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // $('button').click(function(e){
+            //     console.log('클릭', this, e.target)
+            //     $('#target').append('클릭<br/>')
+            // });
+
+            $('a')
+                .click(function(e){
+                    // e.preventDefault(); // 기본 기능 취소.
+                    console.log('클릭', this, e.target)
+                    $('#target').append('클릭<br/>')
+                    return false; // 기본 기능 취소.
+                })
+                .dblclick(function(){
+                    $('#target').append('double click<br/>')
+                })
+                .mousedown(function(){
+                    $('#target').append('down<br/>')
+                })
+                .mouseup(function(){
+                    $('#target').append('up<br/>')
+                });
+        });
+    </script>
+</head>
+<body>
+    <h1>mouse event</h1>
+    <a href="#">link</a>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <div id="target">box</div>
+</body>
+</html>

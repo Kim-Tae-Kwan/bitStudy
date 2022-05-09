@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        div{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        var div;
+        $(function(){
+            console.log('before');
+            // 비동기.
+            // 큐 자료구조 사용.
+            // div = $('div')
+            //     .animate({
+            //         marginLeft : '300px',
+            //         height : '50px'
+            //     }, 3000, 'swing')
+            //     .animate({marginTop : '300px'}, 1000)
+            //     .delay(1000)
+            //     .animate({marginLeft : '0px'},  1000)
+            //     .animate({marginTop : '0px'})
+
+            div = $('div')
+                .animate({marginLeft : '+=50'},  1000)
+
+            console.log('after');
+            
+            // clearQueue : 큐에 담긴 모든 animation  삭제.
+            $('button').click(function(){
+                // var n = div.queue('fx');
+                // console.log(n);
+                // while(n.length--) div.stop(); // 현재 진행하는 animation 정지.
+                // div.clearQueue().stop();
+                // div.finish();
+                div.dequeue();
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>stop</button>
+    <div>div</div>
+</body>
+</html>

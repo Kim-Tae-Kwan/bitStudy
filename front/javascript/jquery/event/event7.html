@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // on -> 이벤트 추가
+            // off -> 이벤트 제거
+            // one -> 한번만 수행
+            // [on | off | one]([event], [callback]);
+            // -> $('button').eq(4).one('click', callback2);
+
+            var callback = function(e){
+                console.log(e.type, e.target.innerText);
+            };
+            
+            // $('button').eq(0).click(callback).dblclick(callback);
+            $('button').eq(1).on('click dblclick', callback); // 이벤트 추가.
+            $('button').eq(2).on('click', function(){
+                $('button').eq(1).off('click', callback);         // 이벤트 제거.
+            });
+            $('button').eq(3).on('click', function(){
+                $('button').eq(1).on('click', callback);         // 이벤트 추가.
+            });
+
+            var callback2 = function(){
+                console.log('한번만 수행');
+                // $(this).off('click', callback2);
+            };
+            $('button').eq(4).one('click', callback2); // one -> 한번만 수행
+
+            // box 생성
+            $('div').first().width(300).height(300).css('background-color', 'rgb(255,0,0)')
+                .children().first().width(200).height(200).css('background-color', 'rgb(0,255,0)')
+                .children().first().width(100).height(100).css('background-color', 'rgb(0,0,255)')
+
+            $('div').on('click', function(e, a){
+                // e.stopPropagation();
+                console.log(e.type, $(this).css('background-color'));
+            });
+
+            // document에 이벤트 추가.
+            // -> document 자식이 button:eq(0) 이면 이벤트 발생.
+            // 동적으로 이벤트 추가 가능.
+            // $(document).on('click','button:eq(0)', function(e){
+            //     console.log('이벤트 binding...', e.target, this);
+            // });
+            // $('h1').after('<button>신규 버튼</button>');
+
+            $('<button></button>').text('신규 버튼').insertAfter('h1').on('click',function(e){
+                console.log('이벤트 binding...', e.target, this);
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>on event binding</h1>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <button>btn5</button>
+    <div>
+        box1
+        <div>
+            box2
+            <div>box3</div>
+        </div>
+    </div>
+</body>
+</html>

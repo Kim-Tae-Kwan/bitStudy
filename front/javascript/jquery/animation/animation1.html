@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('button')
+                // basic
+                // .first()
+                // .click(function(){
+                //     $('div').hide('fast', function(){
+                //         // $('div').show('slow');    
+                //     });
+                // })
+                // .next()
+                // .click(function(){
+                //     $('div').show({
+                //         duration : 1000,
+                //         easing : 'linear',
+                //         progress : function(a,b,c){
+                //             console.log(a,b,c)
+                //         }
+                //     });
+                // })
+                // .next()
+                // .click(function(){
+                //     $('div').stop().toggle();
+                // })
+
+                //slide
+                .first()
+                .click(function(){
+                    $('div').slideUp(1000,'easeInElastic');
+                })
+                .next()
+                .click(function(){
+                    $('div').slideDown(1000,'easeInElastic');
+                })
+                .next()
+                .click(function(){
+                    // $('div').stop().slideToggle();
+                    $('div').slideToggle();
+                })
+
+                // .first()
+                // .click(function(){
+                //     $('div').fadeOut('fast');
+                // })
+                // .next()
+                // .click(function(){
+                //     $('div').fadeIn(10);
+                // })
+                // .next()
+                // .click(function(){
+                //     $('div').fadeToggle();
+                // })
+                // .next()
+                // .click(function(){
+                //     $('div').fadeTo(3000,0.7);
+                // })
+                // .next()
+                // .click(function(){
+                //     $('div').fadeTo(3000,0.2);
+                // })
+        });
+    </script>
+</head>
+<body>
+    <h1>animate</h1>
+    <button>hide</button>
+    <button>show</button>
+    <button>toggle</button>
+    <button>etc</button>
+    <button>etc2</button>
+    <div>
+        <p>그와 원질이 놀이 우는 인간의 밝은 옷을 꽃이 아니더면, 있는가? 인간이 품으며, 행복스럽고 앞이 기관과 청춘의 인간은 얼마나 이것이다. 온갖 위하여, 속에서 뜨거운지라, 쓸쓸하랴? 얼마나 있음으로써 앞이 풀밭에 말이다. 소금이라 못할 봄날의 피가 관현악이며, 품고 때문이다. 미인을 찾아다녀도, 풀이 것이다. 곳이 실로 보이는 찾아 속잎나고, 구할 있는 그들은 아니다. 발휘하기 돋고, 이는 그들은 있으랴? 얼음 힘차게 꾸며 청춘의 반짝이는 힘있다. 인간에 인도하겠다는 간에 수 인간은 내려온 것이다.</p>        
+        <p>많이 설산에서 동산에는 투명하되 얼마나 봄바람이다. 전인 이것을 피는 능히 같이 어디 심장의 것이다. 군영과 앞이 수 이상은 안고, 황금시대다. 가치를 그들은 타오르고 그림자는 자신과 할지니, 뜨고, 것이다. 따뜻한 트고, 희망의 쓸쓸하랴? 인류의 희망의 만천하의 눈이 것이다. 구하지 이것을 고행을 인간이 약동하다. 위하여, 인간은 열매를 소금이라 행복스럽고 우리 이상, 봄바람이다. 아니더면, 거친 이것이야말로 따뜻한 만물은 않는 쓸쓸하랴? 것은 얼음과 피가 이상 같지 것이다.</p>
+    </div>
+</body>
+</html>

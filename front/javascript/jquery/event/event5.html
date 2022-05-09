@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('form').submit(function(e){
+                console.log(e.type);
+                if($('#id').val() == '') return false;
+            });
+            $('#id')
+                // .focus(function(e){
+                //     e.target.value=''
+                // })
+                // .blur(function(e){
+                //     if(e.target.value=='') e.target.value= '초기값';
+                // })
+                .focusin(function(e){
+                    $(e.target).select();
+                })
+                // .focusout(function(e){
+                //     if(e.target.value=='') e.target.value= '초기값';
+                // })
+                // .change(function(e){
+                //     alert(e.target.value);
+                // })
+                .select(function(){ // 드래그
+                    console.log('select...')
+                })
+
+
+            $(':checkbox')
+                .change(function(e){
+                    console.log(e.target)
+                })
+            $(':radio')
+                .change(function(e){
+                    console.log(e.target)
+                })
+            $('select')
+                .change(function(e){
+                    console.log(e.target)
+                })
+
+        });
+    </script>
+</head>
+<body>
+    <h1>회원 가입</h1>
+    <form action="http://naver.com" method="get">
+        <div>
+            <label for="id">id</label>
+            <input type="text" id="id" name="id" value="초기값">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <input type="checkbox" id="chk1" name="chk1">
+            <label for="chk1">item1</label>
+            <input type="checkbox" id="chk2" name="chk2">
+            <label for="chk2">item2</label>
+            <input type="checkbox" id="chk3" name="chk3">
+            <label for="chk3">item3</label>
+            
+        </div>
+        <div>
+            <input type="radio" id="ra1" name="ra">
+            <label for="ra1">item1</label>
+            <input type="radio" id="ra2" name="ra">
+            <label for="ra2">item2</label>
+            <input type="radio" id="ra3" name="ra">
+            <label for="ra3">item3</label>
+            
+        </div>
+        <div>
+            <select name="sel" id="">
+                <option value="">item1</option>
+                <option value="">item2</option>
+                <option value="">item3</option>
+                <option value="">item4</option>
+            </select>
+        </div>
+        <div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <button type="submit">전송</button>
+        </div>
+    </form>
+</body>
+</html>
