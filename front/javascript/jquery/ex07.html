@@ -11,7 +11,7 @@
             var cnt = 0;
             var callback = function(){
                 $('li').css('display','none').html(function(idx,old){
-                if(idx == cnt) $('#target').html(old);
+                    if(idx == cnt) $('#target').html(old);
                })
                cnt++
                if(cnt == 6) cnt=0;

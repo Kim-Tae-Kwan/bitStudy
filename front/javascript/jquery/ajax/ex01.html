@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // $('#target').load('source.html',function(responseText,textStatus,xhr){
+            //     console.log(textStatus);
+            // });
+
+            // $('#target').load('ex02.jsp','name=amdin',function(responseText,textStatus,xhr){
+            //     console.log(responseText);
+            // });
+
+            $.get('localhost:8080/bitStudy/source.html', function(a,b,c,){
+                console.log(a,b,c);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>ajax</h1>
+    <div id="target"></div>
+</body>
+</html>
