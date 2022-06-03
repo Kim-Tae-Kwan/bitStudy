@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- <bean id="bean" class="com.bit.emp.model.EmpVo">
+		<property name="empno" value="10"></property>
+		<property name="ename" value="kim"></property>
+		<property name="sal" value="4000"></property>
+		<property name="job" value="back-end"></property>
+		<property name="hiredate">
+			<bean class="java.sql.Date">
+				<constructor-arg value="1654129578690"></constructor-arg>
+			</bean>
+		</property>
+	</bean> -->
+	
+	<!-- <bean id="hiredate" class="java.sql.Date">
+		<constructor-arg value="1654129578690"></constructor-arg>
+	</bean>
+	
+	<bean id="bean" class="com.bit.emp.model.EmpVo">
+		<constructor-arg value="2222"></constructor-arg>
+		<constructor-arg value="tester"></constructor-arg>
+		<constructor-arg value="4000"></constructor-arg>
+		<constructor-arg value="programmer"></constructor-arg>
+		<constructor-arg ref="hiredate"></constructor-arg>	
+	</bean> -->
+	
+	<!-- <bean id="now" class="java.util.Date"></bean>
+	<bean id="bean" class="com.bit.emp.model.EmpVo">
+		<property name="properties">
+			<props>
+				<prop key="key1">val1</prop>
+				<prop key="key2">val2</prop>
+				<prop key="key3">val3</prop>
+				<prop key="key4"></prop>				
+			</props>
+		</property>
+	</bean> -->
+	<!-- <bean id="now" class="java.util.Date"></bean>
+	<bean id="bean" class="com.bit.emp.model.EmpVo">
+		<property name="arr5">
+			<array>
+				<value>1</value>
+				<value>1</value>
+				<value>1</value>
+				<value>1</value>
+			</array>
+		</property>
+	</bean> -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/scott"></property>
+		<property name="username" value="user01"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
+	<bean id="empDao" class="com.bit.emp.model.EmpDaoImpl4">
+		<constructor-arg name="jdbcTemplate" ref="jdbcTemplate"/>
+		<constructor-arg ref="transactionManager"></constructor-arg>
+	</bean>
+</beans>

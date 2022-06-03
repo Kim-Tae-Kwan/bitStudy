@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="userService" class="com.bit.spring.service.UserService">
+		<property name="su" value="1"></property>
+		<property name="msg" value="Hello"></property>
+	</bean>
+	
+	<bean id="beforeAdvice" class="com.bit.spring.aop.BeforeMethod"></bean>
+	<bean id="returnAdvice" class="com.bit.spring.aop.AfterMethod"></bean>
+	<bean id="exceptionAdvice" class="com.bit.spring.aop.ExceptionMethod"></bean>
+	<bean id="aroundAdvice" class="com.bit.spring.aop.AroundMethod"></bean>
+	
+	<!-- <bean id="pointCut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedNames">
+			<array>
+				<value>printMsg</value>
+				<value>printSu</value>
+			</array>
+		</property>
+	</bean>
+	
+	<bean id="pointCut2" class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+		<property name="patterns">
+			<array>
+				<value>.*print.*</value>
+			</array>
+		</property>
+	</bean> -->
+	
+	<bean id="advisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="pointcut" ref="pointCut2"></property>
+		<property name="advice" ref="aroundAdvice"></property>
+	</bean>
+		
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="userService"></property>
+		<property name="interceptorNames">
+			<array>
+				<value>advisor</value>
+			</array>
+		</property>
+	</bean>
+</beans>
