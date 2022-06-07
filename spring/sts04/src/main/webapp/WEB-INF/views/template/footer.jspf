@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<div class="col-sm-offset-2 col-md-10">
+	<address>
+		<strong>비트교육센터</strong><br> <abbr title="Phone">P:</abbr>
+		02-3486-3456
+	</address>
+
+	<address>
+		<strong>서울특별시 서초구 서초대로74길33 비트빌 3층</strong><br>
+	</address>
+
+</div>
+</div>
