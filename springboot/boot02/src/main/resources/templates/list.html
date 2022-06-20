@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+	integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="../static/js/bootstrap.min.js"
+	th:attr="src=@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>List Page</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>deptno</th>
+					<th>dname</th>
+					<th>loc</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="bean : ${list}">
+				
+					<td><a href="./dept/051" th:href="@{./dept/}+${bean.deptno}" th:text="${bean.deptno}">051</a></td>
+					<td><a href="./dept/051" th:href="@{./dept/}+${bean.deptno}" th:text="${bean.dname}">테스트</a></td>
+					<td><a href="./dept/051" th:href="@{./dept/}+${bean.deptno}" th:text="${bean.loc}">부산</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="add.html" class="btn btn-primary btn-block" th:href="@{/dept/add}">입력</a>
+	</div>
+</body>
+</html>
