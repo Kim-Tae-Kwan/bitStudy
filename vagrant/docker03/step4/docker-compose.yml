@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  boot:
+    image: vodjaos/boot06:v1
+    #build: .
+    container_name: boot
+    command: sh -c "java -jar -Dspring.profiles.active=dev /data/*.jar"
+    ports:
+       - 8080:8080
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - 33006:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+    volumes:
+      - sampleDB:/var/lib/mysql
+      - .:/data
+
+volumes:
+  sampleDB:
+    external: true
