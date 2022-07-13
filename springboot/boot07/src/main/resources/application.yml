@@ -1,0 +1,14 @@
+server:
+  port: 8070
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3306/xe
+    username: root
+    password: mysql
+    
+logging:
+  level:
+    #web: debug
+    '[com.bit.sts22]': debug
